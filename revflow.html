@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-    <script src="/static/js/htmx.min.js"></script>
+    <script src="assets/js/htmx.min.js"></script>
     <meta name="title" content="RevFlow®">
     <meta property="og:title" content="RevFlow®"/>
     <meta property="og:image" itemprop="image" content="https://www.revconntech.site/assets/images/logo_png.png" />
@@ -57,8 +57,9 @@ body {
     border-radius: 4px;
     align-self: center;
 }
-.card,#Footer{
-    background: #006B5B;
+.card{
+    background: #ffc107;
+    color: black;
     border-radius: 20px;
     border: 0;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -70,15 +71,16 @@ body {
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/">Welcome to RevFlow®!</a>
+        <a class="navbar-brand revflow-home" href="index.html"><img src="assets/images/logo_png.png" alt="RevFlow" width="50px" class="me-2"/>
+        Welcome to RevFlow®!</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBasic">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarBasic">
             <div class="navbar-nav ml-auto">
-                <a class="btn btn-warning me-2 dynamic-link" href="/accounts/login/">
+                <a class="btn btn-warning me-2 dynamic-link mx-2" href="/accounts/login/">
                     <i class="fas fa-sign-in-alt fa-xl"></i>&nbsp;Login</a>
-                <a class="btn btn-light dynamic-link" href="/accounts/sign-up-for-trial/register-email">
+                <a class="btn btn-light dynamic-link mx-2" href="/accounts/sign-up-for-trial/register-email">
                     <i class="fas fa-users"></i> &nbsp; Sign Up for Free Trial</a>
             </div>
         </div>
@@ -95,7 +97,7 @@ body {
         <img class="rounded-5" src="assets/images/revflow-banner-3.jpg" alt="RevFlow" width="650px"/>
         <h2 class="h4 mt-4 text-light">Work less, do more!</h2>
         <a href="#features" class="btn btn-warning btn-lg m-2">Explore Features</a>
-        <a href="/accounts/sign-up-for-trial/register-email" class="btn btn-light btn-lg m-2">Sign-Up for a Free Trial</a>
+        <a href="/accounts/sign-up-for-trial/register-email" class="btn btn-light btn-lg m-2 dynamic-link">Sign-Up for a Free Trial</a>
     </div>
 </section>
 
@@ -155,7 +157,7 @@ body {
         <div class="mt-5">
             <h2 class="text-warning">Get Started with RevFlow</h2>
             <p class="text-light">Sign up now and transform your office workflow</p>
-            <a href="/accounts/sign-up-for-trial/register-email" class="btn btn-warning btn-lg m-2">Sign Up For A Free Trial</a>
+            <a href="/accounts/sign-up-for-trial/register-email" class="btn btn-warning btn-lg m-2 dynamic-link">Sign Up For A Free Trial</a>
             <a href="#Footer" class="btn btn-light btn-lg m-2">More</a>
         </div>
     </div>
@@ -176,28 +178,28 @@ body {
             <div class="col">
                 <h3 class="text-warning mb-3">RevFlow®</h3>
                 <ul class="list-unstyled">
-                    <li><a class="text-light" href="/accounts/sign-up-for-trial/register-email">Free Trial</a></li>
-                    <li><a class="text-light" href="/accounts/login/">Login</a></li>
-                    <li><a class="text-light" href="/accounts/password_reset/">Forgot Password</a></li>
-                    <li><a class="text-light" href="/">Home</a></li>
+                    <li><a class="text-light dynamic-link" href="/accounts/sign-up-for-trial/register-email">Free Trial</a></li>
+                    <li><a class="text-light dynamic-link" href="/accounts/login/">Login</a></li>
+                    <li><a class="text-light dynamic-link" href="/accounts/password_reset/">Forgot Password</a></li>
+                    <li><a class="text-light revflow-home" href="">Home</a></li>
                 </ul>
             </div>
             <div class="col">
                 <h3 class="text-warning mb-3">Enquiry</h3>
                 <ul class="list-unstyled">
-                    <li><a class="text-light" hx-get="/contact-us/" hx-indicator="#indicator" hx-target="#detailsModal">Request for a free demo</a></li>
+                    <li><a class="text-light dynamic-htmx-get" hx-get="/contact-us/" hx-indicator="#indicator" hx-target="#detailsModal">Request for a free demo</a></li>
                     <li><a class="text-light" href="#Footer">Case Studies</a></li>
                     <li><a class="text-light" href="#Footer">Documentation</a></li>
-                    <li><a class="text-light" href="/pricing/">Pricing</a></li>
+                    <li><a class="text-light dynamic-link" href="/pricing/">Pricing</a></li>
                 </ul>
             </div>
             <div class="col">
                 <h3 class="text-warning mb-3">Revconn Tech®</h3>
                 <ul class="list-unstyled">
-                    <li><a class="text-light" href="/">About Us</a></li>
-                    <li><a class="text-light" href="#Footer">Blog</a></li>
-                    <li><a class="text-light" href="#Footer">Careers</a></li>
-                    <li><a class="text-light dynamic-htmx-get" hx-get="/contact-us/" hx-target="#detailsModal" hx-indicator="#indicator">Contact Us</a></li>
+                    <li><a class="text-light" href="index.html#about">About Us</a></li>
+                    <li><a class="text-light" href="index.html#products">Products</a></li>
+                    <li><a class="text-light" href="index.html#services">Careers</a></li>
+                    <li><a class="text-light" href="index.html#contact-us">Contact Us</a></li>
                 </ul>
             </div>
             <div class="col">
@@ -219,10 +221,10 @@ body {
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="/static/js/base.js"></script>
+<!-- <script src="/static/js/base.js"></script> -->
 
 <!-- Spinner Loader -->
-<div class="modal fade show d-block text-center" id="indicator" tabindex="-1">
+<div class="modal fade show d-block text-center" id="indicator" tabindex="100">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content bg-transparent border-0">
             <div class="modal-body">
@@ -234,7 +236,7 @@ body {
 </div>
 
 <!-- Details Modal -->
-<div class="modal fade" id="detailsModal" tabindex="-1"></div>
+<div class="modal fade" id="detailsModal" tabindex="200"></div>
 
 <script>
 const baseUrl = "https://subtle-chiquia-revconntech-75de097e.koyeb.app";    
@@ -243,17 +245,18 @@ document.querySelectorAll('.dynamic-link').forEach(link => {
     const path = link.getAttribute('href');
     link.href = baseUrl + path;
 });
-document.querySelectorAll('.dynamic-htmx-get').forEach(link => {
-    const path = link.getAttribute('hx-get');
-    link.setAttribute('hx-get', baseUrl + path);
+document.querySelectorAll('.revflow-home').forEach(link => {
+    link.href = baseUrl;
 });
 window.addEventListener('load', () => {
     indicator.classList.remove('show');
+    indicator.style.visibility = 'hidden';
 });
 window.addEventListener('beforeunload', () => {
     indicator.classList.add('show');
+    indicator.style.visibility = 'visible';
 });
 </script>
-<script src="/assets/js/bootstrap.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
 </body>
 </html>
